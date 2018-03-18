@@ -24,13 +24,12 @@ public class CubeController : MonoBehaviour {
 		}
 	}
 
-//	//トリガーモードで他のオブジェクトと接触した場合の処理
-//	void OnTriggerEnter(Collider other) {
-//
-//		//地面またはキューブに衝突した場合
-//		if (other.gameObject.tag == "GroundTag" || other.gameObject.tag == "CubeTag") {
-//			GetComponent<AudioSource> ().volume = 1;
-//		}
-//		GetComponent<AudioSource> ().volume = 0;	          
-//	}
+	//トリガーモードで他のオブジェクトと接触した場合の処理
+	void OnCollisionEnter2D(Collision2D other) {
+
+		//地面またはキューブに衝突した場合
+		if (other.gameObject.tag == "GroundTag" || other.gameObject.tag == "CubeTag") {
+			GetComponent<AudioSource> ().Play();
+		}          
+	}
 }
